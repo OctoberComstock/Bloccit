@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/about'
   
   root to: 'welcome#index'
-  root to: 'welcome/contact/views'
+  #root to: 'welcome/contact/views'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
