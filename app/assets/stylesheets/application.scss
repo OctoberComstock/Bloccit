@@ -10,6 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  */
- 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+  .social-btn {
+    position: absolute;
+    border-radius: 30;
+    width: 50%;
+    height: 50px;
+    background: #25a7b8;
+    color:blueviolet;
+}
