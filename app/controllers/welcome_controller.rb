@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
   end
   
   def contact
+  endpush
   end
   
 end
