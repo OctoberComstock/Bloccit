@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  get 'welcome/about'
-  
+  resources :posts
+  get 'about' => 'welcome#about'
   
   root to: 'welcome#index'
+end
   #root to: 'welcome/contact/views'
   
 
@@ -62,4 +61,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
