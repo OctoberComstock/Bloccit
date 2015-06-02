@@ -24,6 +24,15 @@
     body: "I'm a body!"
     )
  end
+ 
+ # Create Advertisements
+ 100.times do
+   Advertisement.create!(
+     title:  Faker::Lorem.sentence,
+     copy:   Faker::Lorem.paragraph,
+     price:  Faker::Number.number(3)
+   )
+ end
 
 
  puts "Seed finished"
