@@ -12,11 +12,26 @@ class QuestionsController < ApplicationController
   end
   
   def update
-    @question = Question.update
+    @question = Question.find(params[:id])
+     #allows title & body to edited by a form
+     if @question.update_attributes(
+      params
+       .require(:question)
+       .permit(:title, :body, :resolved)
+     )
+       flash[:notice] = "Question was updated."
+       redirect_to @question
+     else
+       flash[:error] = "There was an error saving the change. Please try again."
+       render :edit
+       #render takes me back to the edit page
+     end
   end
   
   def destroy
-    @question = Question.destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to questions_path
   end
   
   def create
@@ -34,5 +49,6 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 end
