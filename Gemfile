@@ -51,3 +51,5 @@ gem 'spring',        group: :development
 
 #Bootstrap CSS
 gem 'bootstrap-sass'
+#Devise Gem(User Authentication)
+gem 'devise'
