@@ -53,3 +53,5 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 #Devise Gem(User Authentication)
 gem 'devise'
+#Figaro protects my data
+gem 'figaro', '1.0'

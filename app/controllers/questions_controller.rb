@@ -28,11 +28,14 @@ class QuestionsController < ApplicationController
      end
   end
   
-  def destroy
+def destroy
     @question = Question.find(params[:id])
-    @question.destroy
+  if @question.destroy
     redirect_to questions_path
+  else
+    render :show
   end
+end
   
   def create
    @question = Question

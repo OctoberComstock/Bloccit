@@ -17,3 +17,5 @@
 
 # Ignore Spring Directory
 /spring/
+# Ignore application configuration
+/config/application.yml
