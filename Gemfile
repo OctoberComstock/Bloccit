@@ -55,3 +55,5 @@ gem 'bootstrap-sass'
 gem 'devise'
 #Figaro protects my data
 gem 'figaro', '1.0'
+#Adds roles to user accounts
+gem 'pundit'
