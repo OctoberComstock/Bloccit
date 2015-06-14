@@ -57,3 +57,5 @@ gem 'devise'
 gem 'figaro', '1.0'
 #Adds roles to user accounts
 gem 'pundit'
+#Fixes Cookie overflow problem
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
