@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614163827) do
+ActiveRecord::Schema.define(version: 20150616010919) do
 
   create_table "advertisements", force: true do |t|
     t.string   "title"
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 20150614163827) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
+  create_table "summaries", force: true do |t|
+    t.boolean  "public",      default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+    t.integer  "post_id"
+  end
+
+  add_index "summaries", ["post_id"], name: "index_summaries_on_post_id"
 
   create_table "topics", force: true do |t|
     t.string   "name"

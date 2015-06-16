@@ -17,8 +17,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params.require(:post).permit(:title, :body))
     authorize @post
     if @post.save
-    flash[:notice] = "Post was saved."
-   redirect_to [@topic, @post]
+      flash[:notice] = "Post was saved."
+      redirect_to [@topic, @post]
     
    else
     flash[:error] = "There was an error saving the post. Please try again."
