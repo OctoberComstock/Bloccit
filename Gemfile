@@ -59,3 +59,5 @@ gem 'figaro', '1.0'
 gem 'pundit'
 #Fixes Cookie overflow problem
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+#Markdown
+gem 'redcarpet'
