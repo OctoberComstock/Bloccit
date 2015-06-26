@@ -12,11 +12,11 @@ class Post < ActiveRecord::Base
    validates :user, presence: true
    
    def markdown_title
-     markdown_to_html(@title)  
+     markdown_to_html(self.title)  
    end
    
    def markdown_body
-     markdown_to_html(@body)
+     markdown_to_html(self.body)
    end
    
    private
