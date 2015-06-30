@@ -67,3 +67,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 #Cloud to support S3
 gem 'fog'
+#Picture uploads to Posts
+gem 'cloudinary'
