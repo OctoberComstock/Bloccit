@@ -9,6 +9,14 @@
      </small>
     <p><%= @post.markdown_body %></p>
   </div>
+  
+  <% if @post.image? %>
+    <div class="form-group">
+     <p>Current Image!</p>
+     <%= image_tag( @post.image.standard.url ) %>
+    </div>
+  <% end %>
+  
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>

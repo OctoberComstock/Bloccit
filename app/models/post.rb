@@ -25,6 +25,10 @@ class Post < ActiveRecord::Base
    
    private
    
+   def post_params
+     params.require(:post).permit(:title, :image)
+   end
+   
    def markdown_to_html(markdown)
       renderer = Redcarpet::Render::HTML.new
       extensions = {fenced_code_blocks: true}

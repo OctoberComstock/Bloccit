@@ -11,7 +11,15 @@
      </div>
    <% end %>
    
-   
+   <% if post.image? %>
+              <div class="form-group">
+               <p>Current Image!</p>
+               <%= image_tag( post.image.thumb.url ) %>
+              </div>
+              <% else %>
+              <p>I'm the realest.</p>
+          <% end %>
+          
         <div class="form-group">
         <%= f.label :image %>
         <%= f.file_field :image %>
