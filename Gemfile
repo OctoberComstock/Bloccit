@@ -69,3 +69,5 @@ gem 'mini_magick'
 gem 'fog'
 #Picture uploads to Posts
 gem 'cloudinary'
+#Gives me Pages
+gem 'will_paginate', '~> 3.0.5'
