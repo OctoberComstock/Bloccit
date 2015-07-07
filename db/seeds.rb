@@ -1,7 +1,7 @@
  require 'faker'
  
   # Create Users
- 5.times do
+ 700.times do
    user = User.new(
      name:     Faker::Name.name,
      email:    Faker::Internet.email,
@@ -43,7 +43,7 @@
  # Create Comments
  100.times do
    Comment.create!(
-     # user: users.sample,   
+      user: users.sample,   
      # we have not yet associated Users with Comments
      post: posts.sample,
      body: Faker::Lorem.paragraph
@@ -67,7 +67,7 @@
    )
  end
  
- # # Create an admin user
+ # Create an admin user
  # admin = User.new(
  #   name:     'Admin User',
  #   email:    'admin@example.com',
@@ -87,14 +87,14 @@
  # moderator.skip_confirmation!
  # moderator.save!
  
- # # Create a member
- # member = User.new(
- #   name:     'Member User',
- #   email:    'member@example.com',
- #   password: 'helloworld'
- # )
- # member.skip_confirmation!
- # member.save!
+ Create a member
+ member = User.new(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
+ member.skip_confirmation!
+ member.save!
 
 
  puts "Seed finished"

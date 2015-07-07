@@ -71,3 +71,7 @@ gem 'fog'
 gem 'cloudinary'
 #Gives me Pages
 gem 'will_paginate', '~> 3.0.5'
+#Helps with debugging
+gem 'binding_of_caller'
+
+gem 'better_errors'

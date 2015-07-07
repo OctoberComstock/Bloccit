@@ -10,10 +10,10 @@ class Post < ActiveRecord::Base
     
     default_scope { order('created_at DESC') }
     
-   validates :title, length: { minimum: 5 }, presence: true
-   validates :body, length: { minimum: 20 }, presence: true
-   validates :topic, presence: true
-   validates :user, presence: true
+#   validates :title, length: { minimum: 5 }, presence: true
+#   validates :body, length: { minimum: 20 }, presence: true
+#   validates :topic, presence: true
+#   validates :user, presence: true
    
    def markdown_title
      markdown_to_html(title)  

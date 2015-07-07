@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  get 'about' => 'welcome#about'
+  
+  root to: 'welcome#index'
+  
   devise_for :users
   resources :users, only: [:update]
   resources :questions
@@ -6,14 +11,12 @@ Rails.application.routes.draw do
 
   
   resources :topics do
-     resources :posts, except: [:index] do 
-      resources :summaries
-    end
-  end
+    resources :posts, except: [:index] do
+    resources :comments, only: [:create]
+    resources :summaries
+ end
   
-  get 'about' => 'welcome#about'
-  
-  root to: 'welcome#index'
+ 
 end
   #root to: 'welcome/contact/views'
   
@@ -71,4 +74,4 @@ end
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
+  end
