@@ -36,6 +36,6 @@
   </div>
   <div class="col-md-6">
     <h2>Comment Below!</h2>
-    <%= render partial: "comments/form", locals: {topic: @topic, post: @post, comment: @post.comments.new} %>
+    <%= render partial: "comments/form", locals: {post: @post, comment: Comment.new} %>
   </div>
 </div>

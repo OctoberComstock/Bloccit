@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :advertisements
 
   
-  resources :topics do
-    resources :posts, except: [:index] do
+  resources :topics do 
+    resources :posts, except: [:index]
+  end
+  
+  resources :posts, only: [] do
     resources :comments, only: [:create, :destroy]
-    resources :summaries
- end
+  end
   
  
 end
@@ -74,4 +76,3 @@ end
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  end
