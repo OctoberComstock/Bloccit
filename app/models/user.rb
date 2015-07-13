@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
          :trackable, :validatable,
          :confirmable
   
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :votes
   
   mount_uploader :avatar, AvatarUploader
   
