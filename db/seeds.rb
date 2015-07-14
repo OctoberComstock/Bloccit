@@ -31,12 +31,16 @@
 
  # Create Posts
  200.times do
-   Post.create!(
+     post = Post.create!(
      user:   users.sample,
      topic:  topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph,
    )
+   
+    # set the created_at to a time within the past year
+   post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+   post.update_rank
  end
  posts = Post.all
  
@@ -77,7 +81,7 @@
  # admin.skip_confirmation!
  # admin.save!
  
- # # Create a moderator
+ # #Create a moderator
  # moderator = User.new(
  #   name:     'Moderator User',
  #   email:    'moderator@example.com',
@@ -87,14 +91,14 @@
  # moderator.skip_confirmation!
  # moderator.save!
  
- Create a member
- member = User.new(
-   name:     'Member User',
-   email:    'member@example.com',
-   password: 'helloworld'
- )
- member.skip_confirmation!
- member.save!
+ # Create a member
+ # member = User.new(
+ #   name:     'Member User',
+ #   email:    'member@example.com',
+ #   password: 'helloworld'
+ # )
+ # member.skip_confirmation!
+ # member.save!
 
 
  puts "Seed finished"
