@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  after_create :create_vote
+
   def show
    @post = Post.find(params[:id])
    @topic = Topic.find(params[:topic_id])
@@ -60,6 +62,7 @@ class PostsController < ApplicationController
      end
   end
   
+  
   private
 
   def post_params
@@ -67,4 +70,8 @@ class PostsController < ApplicationController
         .require(:post)
         .permit(:title, :body, :image, :topic_id)
   end
+  
+   def create_vote
+     @vote.create!(post: @post, user: current_user, value: 1)
+   end
 end
