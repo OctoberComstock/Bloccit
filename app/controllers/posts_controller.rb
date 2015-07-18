@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  after_create :create_vote
+#   after_create :create_vote
 
   def show
    @post = Post.find(params[:id])
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     @post.topic = @topic
     authorize @post
     if @post.save
+       @post.create_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     
@@ -71,7 +72,7 @@ class PostsController < ApplicationController
         .permit(:title, :body, :image, :topic_id)
   end
   
-   def create_vote
-     @vote.create!(post: @post, user: current_user, value: 1)
-   end
+#   def create_vote
+#      @vote.create!(post: @post, user: current_user, value: 1)
+#   end
 end
