@@ -10,6 +10,8 @@
    user.skip_confirmation!
    user.save!
  end
+
+ #This is where users is defined
  users = User.all
  
  # Note: by calling `User.new` instead of `create`,
@@ -48,7 +50,7 @@
  # Create Comments
  100.times do
    Comment.create!(
-      user: users.sample,   
+     user: users.sample,   
      # we have not yet associated Users with Comments
      post: posts.sample,
      body: Faker::Lorem.paragraph
@@ -59,7 +61,9 @@
  if post.nil?
     Post.create!(
     title: "Unique",
-    body: "I'm a body!"
+    body: "I'm a body! I have no body. Stupid jokes allowed. Just dance. Just dance.",
+    user: users.sample,
+    topic: topics.sample
     )
  end
  
@@ -72,34 +76,34 @@
    )
  end
  
- # Create an admin user
- # admin = User.new(
- #   name:     'Admin User',
- #   email:    'admin@example.com',
- #   password: 'helloworld',
- #   role:     'admin'
- # )
- # admin.skip_confirmation!
- # admin.save!
+ #Create an admin user
+ admin = User.new(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+ admin.skip_confirmation!
+ admin.save!
  
- # #Create a moderator
- # moderator = User.new(
- #   name:     'Moderator User',
- #   email:    'moderator@example.com',
- #   password: 'helloworld',
- #   role:     'moderator'
- # )
- # moderator.skip_confirmation!
- # moderator.save!
+ #Create a moderator
+ moderator = User.new(
+   name:     'Moderator User',
+   email:    'moderator@example.com',
+   password: 'helloworld',
+   role:     'moderator'
+ )
+ moderator.skip_confirmation!
+ moderator.save!
  
- # Create a member
- # member = User.new(
- #   name:     'Member User',
- #   email:    'member@example.com',
- #   password: 'helloworld'
- # )
- # member.skip_confirmation!
- # member.save!
+ #Create a member
+ member = User.new(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
+ member.skip_confirmation!
+ member.save!
 
 
  puts "Seed finished"

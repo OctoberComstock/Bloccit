@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
     
     has_many :comments, dependent: :destroy
     has_many :votes, dependent: :destroy
+    has_many :favorites, dependent: :destroy
     belongs_to :user
     belongs_to :topic
     has_one :summary
@@ -49,16 +50,13 @@ class Post < ActiveRecord::Base
     user.votes.create(value: 1, post: self)
    end
    
-   ActiveRecord::Base.transaction do
-       
-     def save_with_initial_vote
-        Post.transaction(requires_new: true) do
-        create_vote!
-        vote.save!
-        raise ActiveRecord::Rollback
+   
+    def save_with_initial_vote
+      Post.transaction do
+        create_vote
+        self.save!
       end
-     end
-  end
+    end
    
    private
    
