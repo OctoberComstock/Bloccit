@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   
+#   def favorited
+#     favorites.create(post: @post) 
+#   end 
+  
   def favorited(post)
      favorites.where(post_id: post.id).first
   end
