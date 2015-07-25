@@ -57,6 +57,8 @@ class Post < ActiveRecord::Base
         self.save!
       end
     end
+    
+    scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
    
    private
    
