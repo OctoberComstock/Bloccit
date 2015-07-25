@@ -6,6 +6,14 @@ class Vote < ActiveRecord::Base
   message: "%{value} is not a valid vote." }
   
   after_save :update_post
+  
+  def up_vote?
+     value == 1
+  end
+ 
+  def down_vote?
+     value == -1
+  end
 
   private
 

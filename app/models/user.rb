@@ -13,10 +13,16 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   
-#   def favorited
-#     favorites.create(post: @post) 
-#   end 
-  
+  def voted(post)
+    if 
+     votes.where(post_id: post.id).first
+     puts votes
+    
+    else
+     nil
+    end
+  end
+
   def favorited(post)
      favorites.where(post_id: post.id).first
   end
