@@ -14,6 +14,12 @@
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
+# RSpec.configure do |config|
+#   config.include Warden::Test::Helpers
+#   config.before :suite do
+#     Warden.test_mode!
+#   end
+# end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

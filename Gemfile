@@ -76,8 +76,11 @@ gem 'binding_of_caller'
 
 gem 'better_errors'
 
+gem "factory_girl_rails", "~> 4.0"
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   
   gem 'capybara'
+  
 end

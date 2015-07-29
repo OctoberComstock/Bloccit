@@ -33,6 +33,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  Capybara.default_host = "https://bloccit-oktobercomstock.c9.io"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
