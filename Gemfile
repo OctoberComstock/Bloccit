@@ -78,6 +78,8 @@ gem 'better_errors'
 
 gem "factory_girl_rails", "~> 4.0"
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   
