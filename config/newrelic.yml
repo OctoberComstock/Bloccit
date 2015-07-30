@@ -12,11 +12,11 @@
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: d32cb7aab6701af68e9d433e5b949e98e0a10c72
+  license_key: 2b0c94220a8866f020d90412c244f1d0a01b6add
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
-  app_name: My Application
+  app_name: blocccit
 
   # To disable the agent regardless of other settings, uncomment the following:
   # agent_enabled: false
@@ -30,7 +30,7 @@ common: &default_settings
 # If your application has other named environments, configure them here.
 development:
   <<: *default_settings
-  app_name: My Application (Development)
+  app_name: blocccit (Development)
 
   # NOTE: There is substantial overhead when running in developer mode.
   # Do not use for production or load testing.
@@ -43,7 +43,7 @@ test:
 
 staging:
   <<: *default_settings
-  app_name: My Application (Staging)
+  app_name: blocccit (Staging)
 
 production:
   <<: *default_settings

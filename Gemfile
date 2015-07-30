@@ -80,6 +80,10 @@ gem "factory_girl_rails", "~> 4.0"
 
 gem 'newrelic_rpm'
 
+gem 'puma', group: :production
+
+gem 'thin', group: :development
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   
