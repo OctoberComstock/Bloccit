@@ -62,3 +62,13 @@ class TopicsController < ApplicationController
   params.require(:topic).permit(:name, :description)
   end
 end
+
+# What I took out of my topics show view and was causing error.
+# <% if post.image? %>
+#         <div class="form-group">
+        
+#           <p>Current Image!</p>
+        
+#           <%= image_tag( post.image.thumb.url ) %>
+#         </div>
+#       <% end %>
