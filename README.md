@@ -1,5 +1,9 @@
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+###Bloccit: A Reddit replica!
 
-Made with my mentor at [Bloc](http://bloc.io).
+**It has all the functionality of Reddit! Including voting, favoriting, commenting, creating posts and topics!**
 
-Heroku App Name: blocccit
+
+
+######This is an educational project that I built with my mentor at [Bloc](http://bloc.io).
+
+_Heroku App Name: blocccit_
