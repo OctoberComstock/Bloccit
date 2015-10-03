@@ -4,6 +4,6 @@
 
 
 
-######This is an educational project that I built with my mentor at [Bloc](http://bloc.io).
+
 
 _Heroku App Name: blocccit_
