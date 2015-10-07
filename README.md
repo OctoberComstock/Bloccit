@@ -21,4 +21,4 @@
 * JQuery
 
 
-_Heroku App Name: blocccit_
+_Heroku Domain Name: blocccit.herokuapp.com_
